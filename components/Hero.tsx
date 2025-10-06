@@ -1,9 +1,26 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FeaturedStreamerCard } from './FeaturedStreamerCard';
 
 export function Hero() {
+  const [mounted, setMounted] = useState(false);
+  const [particles, setParticles] = useState<Array<{ x: number; y: number; duration: number; delay: number }>>([]);
+
+  useEffect(() => {
+    setMounted(true);
+    // Generate particles only on client side to avoid hydration mismatch
+    setParticles(
+      [...Array(20)].map(() => ({
+        x: Math.random() * window.innerWidth,
+        y: -20,
+        duration: Math.random() * 10 + 10,
+        delay: Math.random() * 5,
+      }))
+    );
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-squid-gray to-black">
       {/* Animated background pattern */}
@@ -20,29 +37,31 @@ export function Hero() {
         }} />
       </div>
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-squid-red rounded-sm"
-            initial={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
-              y: -20,
-              opacity: 0.3,
-            }}
-            animate={{
-              y: (typeof window !== 'undefined' ? window.innerHeight : 1080) + 20,
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-            }}
-          />
-        ))}
-      </div>
+      {/* Floating particles - only rendered on client to avoid hydration mismatch */}
+      {mounted && (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {particles.map((particle, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-squid-red rounded-sm"
+              initial={{
+                x: particle.x,
+                y: particle.y,
+                opacity: 0.3,
+              }}
+              animate={{
+                y: window.innerHeight + 20,
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{
+                duration: particle.duration,
+                repeat: Infinity,
+                delay: particle.delay,
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20">
@@ -59,13 +78,13 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-8"
           >
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-4 tracking-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight">
               <span className="inline-block bg-gradient-to-r from-squid-red via-squid-pink to-squid-red bg-clip-text text-transparent animate-pulse">
-                SQUID
+                SQUID GAMES
               </span>
               <br />
               <span className="inline-block text-white" style={{ textShadow: '4px 4px 0 rgba(211, 47, 47, 0.5)' }}>
-                GAMES
+                COLOMBIA
               </span>
             </h1>
             <div className="inline-block px-6 py-2 bg-squid-red/20 border-2 border-squid-red rounded">

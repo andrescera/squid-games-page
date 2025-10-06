@@ -1,10 +1,10 @@
-# 🎮 Squid Games Minecraft - Website del Evento
+# 🎮 Squid Games Colombia Minecraft - Website del Evento
 
-Un sitio web visualmente impresionante para el evento "Squid Games Minecraft" que presenta 145+ streamers participantes, con descarga del mod y galerías de clips.
+Un sitio web visualmente impresionante para el evento "Squid Games Colombia Minecraft" que presenta 145+ streamers participantes, con descarga del mod y galerías de clips.
 
 ## 🌟 Características
 
-- ✨ **Diseño Moderno**: Tema oscuro inspirado en Squid Game con elementos blocky de Minecraft
+- ✨ **Diseño Moderno**: Tema oscuro inspirado en Squid Games Colombia con elementos blocky de Minecraft
 - 🎨 **Animaciones Suaves**: Transiciones fluidas usando Framer Motion
 - 📱 **Totalmente Responsivo**: Optimizado para móvil, tablet y escritorio
 - 🎯 **145+ Streamers**: Tarjetas de streamers con avatares dinámicos de Kick/Twitch
@@ -65,7 +65,7 @@ squid-games-website/
 ├── app/
 │   ├── layout.tsx              # Layout raíz con metadata
 │   ├── page.tsx                # Página principal
-│   └── globals.css             # Estilos globales con tema Squid Game
+│   └── globals.css             # Estilos globales con tema Squid Games Colombia
 ├── components/
 │   ├── ui/                     # Componentes shadcn/ui
 │   │   ├── button.tsx
@@ -250,7 +250,7 @@ El sitio ha sido probado en:
 
 ## 📄 Licencia
 
-Este proyecto es parte del evento comunitario Squid Games Minecraft.
+Este proyecto es parte del evento comunitario Squid Games Colombia Minecraft.
 
 ## 🙏 Créditos
 

@@ -14,7 +14,22 @@ async function fetchKickLiveStatus(username: string): Promise<LiveStatus> {
     });
 
     if (!response.ok) {
-      throw new Error(`Kick API returned ${response.status}`);
+      // 404 is expected for invalid/changed usernames, don't log as error
+      if (response.status === 404) {
+        // Silently return offline status for non-existent channels
+        return {
+          isLive: false,
+          currentViewers: 0,
+          lastUpdated: Date.now(),
+        };
+      }
+      // Log other HTTP errors (5xx, rate limits, etc.)
+      console.warn(`Kick API returned ${response.status} for ${username}`);
+      return {
+        isLive: false,
+        currentViewers: 0,
+        lastUpdated: Date.now(),
+      };
     }
 
     const data = await response.json();
@@ -25,6 +40,7 @@ async function fetchKickLiveStatus(username: string): Promise<LiveStatus> {
       lastUpdated: Date.now(),
     };
   } catch (error) {
+    // Only log actual errors (network issues, JSON parsing, etc.)
     console.error(`Error fetching Kick status for ${username}:`, error);
     return {
       isLive: false,

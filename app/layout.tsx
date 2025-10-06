@@ -13,19 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Squid Games Minecraft - Evento de Supervivencia Épico",
+  title: "Squid Games Colombia Minecraft - Evento de Supervivencia Épico",
   description: "145+ streamers compitiendo en los juegos más mortales de Minecraft. Descarga el mod y únete al evento de supervivencia más épico.",
-  keywords: ["Squid Games", "Minecraft", "Mod", "Streaming", "Kick", "Gaming", "Survival", "Colombia"],
+  keywords: ["Squid Games Colombia", "Minecraft", "Mod", "Streaming", "Kick", "Gaming", "Survival", "Colombia"],
   authors: [{ name: "Squid Games Colombia" }],
   openGraph: {
-    title: "Squid Games Minecraft",
+    title: "Squid Games Colombia Minecraft",
     description: "145+ streamers compitiendo en los juegos más mortales de Minecraft",
     type: "website",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Squid Games Minecraft",
+    title: "Squid Games Colombia Minecraft",
     description: "145+ streamers compitiendo en el evento más épico de Minecraft",
   },
 };

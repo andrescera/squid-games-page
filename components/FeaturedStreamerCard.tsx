@@ -120,8 +120,8 @@ export function FeaturedStreamerCard() {
 
               {/* Description */}
               <p className="text-gray-300 text-sm md:text-base max-w-xl">
-                {isLive 
-                  ? "¡En vivo ahora! Únete a la transmisión principal del evento Squid Games Minecraft."
+                {isLive
+                  ? "¡En vivo ahora! Únete a la transmisión principal del evento Squid Games Colombia Minecraft."
                   : "El anfitrión principal del evento. Síguelo para no perderte ningún momento épico."
                 }
               </p>

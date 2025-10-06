@@ -1,4 +1,4 @@
-# 🚀 Vercel Deployment Guide - Squid Games Minecraft
+# 🚀 Vercel Deployment Guide - Squid Games Colombia Minecraft
 
 ## Step 1: Authenticate with Vercel ✅ IN PROGRESS
 
@@ -179,7 +179,7 @@ After deployment, you can monitor:
 
 ## 🎮 You're Live!
 
-Once deployed, your Squid Games Minecraft website will be:
+Once deployed, your Squid Games Colombia Minecraft website will be:
 - ✅ Globally distributed on Vercel's CDN
 - ✅ Automatically HTTPS enabled
 - ✅ Optimized for performance

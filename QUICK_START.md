@@ -1,4 +1,4 @@
-# 🚀 Quick Start Guide - Squid Games Minecraft Website
+# 🚀 Quick Start Guide - Squid Games Colombia Minecraft Website
 
 ## ⚡ Get Started in 3 Steps
 
@@ -52,7 +52,7 @@ Look for the "Descargar Mod" button and update the URL.
 
 ### Colors
 File: `app/globals.css`
-- Change Squid Game theme colors
+- Change Squid Games Colombia theme colors
 - Modify gradient effects
 - Adjust border styles
 
